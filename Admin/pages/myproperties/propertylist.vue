@@ -9,7 +9,7 @@
                         <div class="row ratio_55 property-grid-2 property-map map-with-back">
                             <div class="col-xl-12">
                                 <div class="property-2 row column-sm property-label property-grid">
-                                    <MypropertiesListing :data="alldata" />
+                                    <MypropertiesListing :dataHotel="Hotels" />
                                 </div>
                             </div>
                         </div>
@@ -22,12 +22,17 @@
 </template>
 
 <script setup lang="ts">
-import {baseUrl} from "@/composable/apiurl";
-const {data} = await useFetch(baseUrl + '/api/hotel/all')
-interface data {
-    name: string[];
-}
-const alldata: data[] = data.value.proertylisting
+import services from "@/services/services";
+import { ref, onMounted } from "vue";
+
+const Hotels = ref([]);
+
+onMounted(() => {
+    services.getHotels().then((res: any) => {
+        Hotels.value = res.data;
+    })
+})
+
 </script>
 
 <style scoped>

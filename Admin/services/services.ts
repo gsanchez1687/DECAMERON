@@ -19,6 +19,11 @@ const api = Axios.create({
               'Content-Type': 'multipart/form-data'
             }
           });
+      },
+
+      //Obtiene todos los hoteles
+      getHotels(){
+        return api.get(`/api/hotel/all`);
       }
 
 

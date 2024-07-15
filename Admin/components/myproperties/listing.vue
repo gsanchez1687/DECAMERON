@@ -2,13 +2,6 @@
     <div class="col-xl-4 col-md-6 xl-6" v-for="(item , index) in getdataHotel()" :key="index">
         <div class="property-box">
             <div class="property-image">
-                <swiper class="property-slider" navigation :loop="true" :modules="modules" :pagination="{clickable : true}" >
-                   <swiper-slide>
-                    <nuxt-link to="javascript:void(0)" class="bg-size background_wrapper2">
-                        <img src="/image/property/19.jpg" class="bg-img" alt="">
-                    </nuxt-link>
-                   </swiper-slide>
-                </swiper>
             </div>
             <MypropertiesPropertyDetails :data="item"/>
         </div>

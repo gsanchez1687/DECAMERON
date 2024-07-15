@@ -103,7 +103,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "baseURL": "http://decameron.local:8000",
-    "FRONTEND_URL": ""
+    "FRONTEND_URL": "http://decameron.local:3000/myproperties/propertylist"
   }
 };
 const envOptions = {

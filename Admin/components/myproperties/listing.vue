@@ -4,8 +4,8 @@
             <div class="property-image">
                 <swiper class="property-slider" navigation :loop="true" :modules="modules" :pagination="{clickable : true}" >
                    <swiper-slide>
-                    <nuxt-link to="javascript:void(0)" class="bg-size background_wrapper" :style="'background-image:url(../../assets/hotel.jpg)'">
-                        <img :src=assets/hotel.jpg class="bg-img d-none" alt="">
+                    <nuxt-link to="javascript:void(0)" class="bg-size background_wrapper">
+                        <img class="bg-img d-none" alt="">
                     </nuxt-link>
                    </swiper-slide>
                 </swiper>

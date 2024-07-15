@@ -25,14 +25,15 @@
 import services from "@/services/services";
 import { ref, onMounted } from "vue";
 
+// Data
 const Hotels = ref([]);
 
+// Get all hotels
 onMounted(() => {
     services.getHotels().then((res: any) => {
         Hotels.value = res.data;
     })
 })
-
 </script>
 
 <style scoped>

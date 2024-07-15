@@ -1,6 +1,7 @@
 <template>
     <div class="property-details">
         <span class="font-roboto">{{ data.address }}</span>
+        <span class="font-roboto">{{ data.status.name }}</span>
         <nuxt-link to="https://sheltos-vue.vercel.app/property/single-property-8">
             <h3>{{ data.name }}</h3>
         </nuxt-link>

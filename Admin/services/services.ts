@@ -35,5 +35,6 @@ const api = Axios.create({
       getAccommodations(){
         return api.get(`/api/hotel/accommodations`);
       },
+      
 
   }

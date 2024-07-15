@@ -115,10 +115,6 @@ onMounted(() => {
     });
 })
 
-
-
-
-
 function saveHotel() {
     const formData = new FormData();
     formData.append("name", form.value.name);
@@ -151,7 +147,7 @@ function saveHotel() {
             "dangerouslyHTMLString": true
         }); // ToastOptions
     }).catch((error) => {
-        toast("Error al registrar el Hotel", {
+        toast("Error al registrar el Hotel:"+error, {
             "theme": "auto",
             "type": "error",
             "position": "bottom-center",

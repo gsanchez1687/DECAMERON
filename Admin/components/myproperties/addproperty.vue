@@ -68,6 +68,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import services from '@/services/services';
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
 
 const form = ref({
     name: '',
@@ -97,7 +100,13 @@ function saveHotel() {
         return;
     }else{
         services.saveHotel(formData).then((response) => {
-        console.log(response);
+        toast("Se ha registrado el Hotel", {
+            "theme": "auto",
+            "type": "success",
+            "position": "bottom-center",
+            "transition": "slide",
+            "dangerouslyHTMLString": true
+        }); // ToastOptions
     }).catch((error) => {
         console.log(error);
     });

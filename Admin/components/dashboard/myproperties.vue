@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header pb-0">
                 <div class="d-flex">
-                    <h5>My properties</h5>
+                    <h5>Mis Hoteles</h5>
                     <nuxt-link to="/myproperties/addproperty">+ New</nuxt-link>
                 </div>
             </div>

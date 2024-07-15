@@ -3,8 +3,7 @@
         <div class="page-sidebar" id="sidebar">
             <div class="logo-wrap">
                 <nuxt-link href="/">
-                    <img src="/image/logo/4.png" class="img-fluid for-light" alt="">
-                    <img src="/image/logo/9.png" class="img-fluid for-dark" alt="">
+                    <h3>Decameron</h3>
                 </nuxt-link>
                 <div class="back-btn d-lg-none d-inline-block" @click="removesidebar()">
                    <Icon name="mdi:chevron-double-left" class="fs-3" />
@@ -17,8 +16,8 @@
                             <img src="/image/avatar/3.jpg" class="img-fluid" alt="">
                         </div>
                         <div class="media-body">
-                            <nuxt-link to="/users/profile"><h6>Zack Lee</h6></nuxt-link>
-                            <span class="font-roboto">zackle@gmail.com</span>
+                            <nuxt-link to="/users/profile"><h6>Guillermo</h6></nuxt-link>
+                            <span class="font-roboto">gsanchez1687@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -42,11 +41,8 @@
                         <li>
                             <div class="upgrade-box">
                                 <img src="/image/svg/1.svg" class="img-fluid" alt="">
-                                <h6>Need Help</h6>
-                                <a href="https://support.pixelstrap.com/" target="_blank" class="p-0 m-0">
-                                    <span class="d-block">Raise ticket at "support@pixelstrap.com"</span></a>
-                                
-                                <button type="button" onclick=" window.open('https://themeforest.net/user/pixelstrap/portfolio', '_blank');" class="btn btn-pill btn-gradient color-4 btn-sm mt-2 fw-bold">Buy Now</button>
+                                <h6>Necesita Ayuda?</h6>
+                                <a href="https://support.pixelstrap.com/" target="_blank" class="p-0 m-0"><span class="d-block">decameron@gmail.com</span></a>
                             </div>
                         </li>
                     </ul>

@@ -23,7 +23,7 @@
             <LayoutHeaderMessage/>
             <li class="profile-avatar onhover-dropdown">
                 <div>
-                    <img src="/image/avatar/3.jpg" class="img-fluid" alt="">
+                    <img src="/image/avatar/10.jpg" class="img-fluid" alt="">
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
                     <li><nuxt-link to="/users/profile"><span>Cuenta </span><Icon name="mdi:account-outline" class="fs-3" /></nuxt-link></li>

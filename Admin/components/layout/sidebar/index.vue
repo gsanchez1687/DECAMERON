@@ -14,7 +14,7 @@
                 <div class="user-profile">
                     <div class="media">
                         <div class="change-pic">
-                            <img src="/image/avatar/3.jpg" class="img-fluid" alt="">
+                            <img src="/image/avatar/10.jpg" class="img-fluid" alt="">
                         </div>
                         <div class="media-body">
                             <nuxt-link to="/users/profile"><h6>Guillermo</h6></nuxt-link>

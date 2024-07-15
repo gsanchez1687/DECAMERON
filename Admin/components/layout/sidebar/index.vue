@@ -1,7 +1,7 @@
 <template>
 
         <div class="page-sidebar" id="sidebar">
-            <div class="logo-wrap">
+            <div class="logo-wrap text-center">
                 <nuxt-link href="/">
                     <h3>Decameron</h3>
                 </nuxt-link>

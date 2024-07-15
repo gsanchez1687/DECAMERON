@@ -15,7 +15,7 @@
             </li>
             <li>
                 <a href="#!" @click="toggleFullScreen()">
-                    <Icon name="humbleicons:maximize" class="fs-3" />                   
+                    <Icon name="humbleicons:maximize" class="fs-3" />
                 </a>
             </li>
             <LayoutHeaderAttachment/>
@@ -26,9 +26,9 @@
                     <img src="/image/avatar/3.jpg" class="img-fluid" alt="">
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
-                    <li><nuxt-link to="/users/profile"><span>Account </span><Icon name="mdi:account-outline" class="fs-3" /></nuxt-link></li>
-                    <li><nuxt-link to="/myproperties/propertylist"><span>Listing</span><Icon name="mdi:file-document-outline" class="fs-3"/></nuxt-link></li>
-                    <li><nuxt-link to="/Authentication/login"><span>Log in</span><Icon name="mdi:login" class="fs-3"/></nuxt-link></li>
+                    <li><nuxt-link to="/users/profile"><span>Cuenta </span><Icon name="mdi:account-outline" class="fs-3" /></nuxt-link></li>
+                    <li><nuxt-link to="/myproperties/propertylist"><span>Listar Hoteles</span><Icon name="mdi:file-document-outline" class="fs-3"/></nuxt-link></li>
+                    <li><nuxt-link to="/Authentication/login"><span>Iniciar Sesión</span><Icon name="mdi:login" class="fs-3"/></nuxt-link></li>
                 </ul>
             </li>
         </ul>

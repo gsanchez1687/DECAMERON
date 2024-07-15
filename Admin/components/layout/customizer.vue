@@ -1,4 +1,5 @@
-<template>    <div class="customizer-wrap" :class="open?'open' : ''">
+<template>  
+  <div class="customizer-wrap" :class="open?'open' : ''">
     <div class="customizer-links"  @click="open = true">
       <Icon name="material-symbols:settings-outline" />
     </div>
@@ -51,8 +52,8 @@
 
 <script setup lang="ts">
     import {usecustomizerStore} from '@/store/costomizer'
-let primary = ref<string>('#f35d43');
-let secondary = ref<string>('#f34451')
+let primary = ref<string>('#1e90ff');
+let secondary = ref<string>('#3742fa');
 let open = ref<boolean>(false)
 let dark = ref<boolean>(false)
 let dir = ref<boolean>(false)

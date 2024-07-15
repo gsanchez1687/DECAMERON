@@ -5,7 +5,7 @@
                 <div class="col-sm-6">
                     <div class="page-header-left">
                         <h3>{{ title }}
-                            <small>Welcome to admin panel</small>
+                            <small>Formulario de registro</small>
                         </h3>
                     </div>
                 </div>

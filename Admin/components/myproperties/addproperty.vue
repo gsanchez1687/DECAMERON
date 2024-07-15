@@ -1,6 +1,6 @@
 <template>
     <div class="page-body">
-        <CommonBreadcrumb title="Registrat Hotel" page="Mis Hoteles"/>
+        <CommonBreadcrumb title="Agregar Hotel" page="Mis Hoteles"/>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">

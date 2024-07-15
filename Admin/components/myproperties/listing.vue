@@ -5,7 +5,7 @@
                 <swiper class="property-slider" navigation :loop="true" :modules="modules" :pagination="{clickable : true}" >
                    <swiper-slide v-for="(img , index) in item.img" :key="index">
                     <nuxt-link to="javascript:void(0)" class="bg-size background_wrapper" :style="'background-image:url('+img+')'">
-                        <img :src="img" class="bg-img d-none" alt="">                        
+                        <img :src="img" class="bg-img d-none" alt="">
                     </nuxt-link>
                    </swiper-slide>
                 </swiper>
@@ -18,7 +18,7 @@
                 <div class="seen-data">
                     <Icon name="material-symbols:android-camera-outline"/>
                     <span>{{'25'}}</span>
-                </div>               
+                </div>
                 <div class="overlay-property-box">
                     <nuxt-link to="javascript:void(0)" class="effect-round" data-bs-toggle="tooltip" data-bs-placement="left" title="compare">
                         <Icon name="material-symbols:shuffle" class="text-black"/>

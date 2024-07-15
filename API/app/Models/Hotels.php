@@ -39,29 +39,9 @@ class Hotels extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function country()
-    {
-        return $this->belongsTo(Countries::class);
-    }
-
-    public function state()
-    {
-        return $this->belongsTo(State::class);
-    }
-
-    public function city()
-    {
-        return $this->belongsTo(Cities::class);
-    }
-
     public function status()
     {
         return $this->belongsTo(Statuses::class);
-    }
-
-    public function rooms()
-    {
-        return $this->hasMany(Rooms::class);
     }
 
 }

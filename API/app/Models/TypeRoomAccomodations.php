@@ -9,4 +9,11 @@ class TypeRoomAccomodations extends Model
 {
     use HasFactory;
     protected $table = 'type_room_accomodations';
+    protected $fillable = [
+        'hotel_id',
+        'type_room_id',
+        'accommodation_id',
+        'created_at',
+        'updated_at'
+    ];
 }

@@ -4,12 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Hotels;
-
+use App\Models\TypeRooms;
+use App\Models\Accommodations;
+use App\Models\TypeRoomAccomodations;
+use Illuminate\Support\Facades\DB;
 class HotelsController extends Controller
 {
+
+    public function all(){
+        try {
+            $hotels = Hotels::with('status')->get();
+            return response()->json($hotels, 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error al obtener los hoteles', 'error' => $th->getMessage()], 400);
+        }
+    }
+
+    public function rooms(){
+
+        try {
+            $rooms = TypeRooms::all();
+            return response()->json($rooms, 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error al obtener los tipos de habitaciones', 'error' => $th->getMessage()], 400);
+        }
+    }
+
+    public function accommodations(){
+
+        try {
+            $accommodations = Accommodations::all();
+            return response()->json($accommodations, 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error al obtener los tipos de alojamiento', 'error' => $th->getMessage()], 400);
+        }
+    }
+
     public function store(Request $request)
     {
         try {
+            DB::beginTransaction();
             $request->validate([
                 'user_id' => 'integer',
                 'name' => 'required|regex:/^[a-zA-Z0-9\s]+$/|max:100|unique:hotels',
@@ -38,8 +72,16 @@ class HotelsController extends Controller
                 'description'=>$request->description,
                 'status_id'=>5
             ]);
+
+            TypeRoomAccomodations::create([
+                'hotel_id' => $hotel->id,
+                'type_room_id' => $request->room_id,
+                'accommodation_id' => $request->accommodation_id
+            ]);
+            DB::commit();
             return response()->json($hotel, 201);
         } catch (\Throwable $th) {
+            DB::rollBack();
             return response()->json(['message' => 'Error al registrar el hotel', 'error' => $th->getMessage()], 400);
         }
     }

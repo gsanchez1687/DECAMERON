@@ -108,7 +108,13 @@ function saveHotel() {
             "dangerouslyHTMLString": true
         }); // ToastOptions
     }).catch((error) => {
-        console.log(error);
+        toast("Error al registrar el Hotel", {
+            "theme": "auto",
+            "type": "error",
+            "position": "bottom-center",
+            "transition": "slide",
+            "dangerouslyHTMLString": true
+        })
     });
     }
 

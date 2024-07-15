@@ -96,8 +96,13 @@ function saveHotel() {
 
     //validar que todos los campos esten llenos
     if(form.value.name == '' || form.value.address == '' || form.value.zip_code == '' || form.value.phone == '' || form.value.email == '' || form.value.website == '' || form.value.maximum_rooms == '' || form.value.description == ''){
-        alert('Todos los campos son obligatorios');
-        return;
+        toast("Todos los campos son obligatorios", {
+            "theme": "auto",
+            "type": "error",
+            "position": "bottom-center",
+            "transition": "slide",
+            "dangerouslyHTMLString": true
+        })
     }else{
         services.saveHotel(formData).then((response) => {
         toast("Se ha registrado el Hotel", {
@@ -117,10 +122,7 @@ function saveHotel() {
         })
     });
     }
-
-    
 }
-
 </script>
 
 <style scoped>

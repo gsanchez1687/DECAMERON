@@ -3,7 +3,8 @@
         <div class="page-sidebar" id="sidebar">
             <div class="logo-wrap text-center">
                 <nuxt-link href="/">
-                    <h3>Decameron</h3>
+                    <img src="/image/logo.png" class="img-fluid for-light" alt="logo">
+                    <img src="/image/logo.png" class="img-fluid for-dark" alt="logo">
                 </nuxt-link>
                 <div class="back-btn d-lg-none d-inline-block" @click="removesidebar()">
                    <Icon name="mdi:chevron-double-left" class="fs-3" />

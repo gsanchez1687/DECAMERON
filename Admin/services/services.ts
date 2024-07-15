@@ -24,7 +24,16 @@ const api = Axios.create({
       //Obtiene todos los hoteles
       getHotels(){
         return api.get(`/api/hotel/all`);
-      }
+      },
 
+      //Obtener rooms
+      getRooms(){
+        return api.get(`/api/hotel/rooms`);
+      },
+
+      //Obtener accommodations
+      getAccommodations(){
+        return api.get(`/api/hotel/accommodations`);
+      },
 
   }

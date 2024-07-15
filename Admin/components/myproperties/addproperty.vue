@@ -51,6 +51,22 @@
                                     <input type="text" v-model="form.description" class="form-control" id="description" placeholder="Descripcion">
                                 </div>
 
+                                <div class="col-ms-6 col-md-6">
+                                    <label for="room_id" class="form-label">Tipo de Habitaciones</label>
+                                    <select v-model="form.room_id" class="form-control" name="room_id" id="room_id">
+                                        <option value="">Selecciona una habitacion</option>
+                                        <option v-for="room in Rooms" :key="room.id" :value="room.id">{{ room.name }}</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-ms-6 col-md-6">
+                                    <label for="accommodation" class="form-label">Alojamiento</label>
+                                    <select v-model="form.accommodation_id" class="form-control" name="room_id" id="room_id">
+                                        <option value="">Selecciona un alojamiento</option>
+                                        <option v-for="accommodation in Accommodations" :key="accommodation.id" :value="accommodation.id">{{ accommodation.name }}</option>
+                                    </select>
+                                </div>
+
                                 <div class="form-btn col-sm-12">
                                     <button type="button" @click="saveHotel" class="btn btn-pill btn-gradient color-4">Guardar</button>
                                     <button type="button" class="btn btn-pill btn-dashed color-4">Cancelar</button>
@@ -71,7 +87,6 @@ import services from '@/services/services';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 
-
 const form = ref({
     name: '',
     address: '',
@@ -80,8 +95,29 @@ const form = ref({
     email: '',
     website: '',
     maximum_rooms: '',
-    description: ''
+    description: '',
+    room_id: '',
+    accommodation_id: ''
 });
+
+
+const Rooms = ref([]);
+const Accommodations = ref([]);
+
+onMounted(() => {
+    
+    services.getRooms().then((res: any) => {
+        Rooms.value = res.data;
+    });
+
+    services.getAccommodations().then((res: any) => {
+        Accommodations.value = res.data;
+    });
+})
+
+
+
+
 
 function saveHotel() {
     const formData = new FormData();
@@ -93,9 +129,11 @@ function saveHotel() {
     formData.append("website", form.value.website);
     formData.append("maximum_rooms", form.value.maximum_rooms);
     formData.append("description", form.value.description);
+    formData.append("room_id", form.value.room_id);
+    formData.append("accommodation_id", form.value.accommodation_id);
 
     //validar que todos los campos esten llenos
-    if(form.value.name == '' || form.value.address == '' || form.value.zip_code == '' || form.value.phone == '' || form.value.email == '' || form.value.website == '' || form.value.maximum_rooms == '' || form.value.description == ''){
+    if(form.value.name == '' || form.value.address == '' || form.value.zip_code == '' || form.value.phone == '' || form.value.email == '' || form.value.website == '' || form.value.maximum_rooms == '' || form.value.description == '' || form.value.room_id == '' || form.value.accommodation_id == ''){
         toast("Todos los campos son obligatorios", {
             "theme": "auto",
             "type": "error",

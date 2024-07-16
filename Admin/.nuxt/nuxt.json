@@ -1,7 +1,7 @@
 {
-  "_hash": "m5NE45eVri",
+  "_hash": "2WjrygJrlR",
   "project": {
-    "rootDir": "/Applications/MAMP/htdocs/DECAMERON/Admin"
+    "rootDir": "/usr/src/app"
   },
   "versions": {
     "nuxt": "3.11.2"

@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  backend:
+    image: webdevops/php-apache:8.2
+    ports:
+      - "8000:80"
+    volumes:
+      - ./API:/var/www
+    working_dir: /var/www
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:Il7U5ccVxIzTwHHZaJimm2D3cNI/JFuckX3H+Q8zKcs=
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=decameron
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=root
+    depends_on:
+      - db
+
+  frontend:
+    image: node:20
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Admin:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: decameron
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

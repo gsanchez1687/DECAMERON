@@ -31,3 +31,7 @@ Route::get('hotel/rooms', HotelsController::class . '@rooms')->name('hotel/rooms
 
 //lista de tipo de alojamiento
 Route::get('hotel/accommodations', HotelsController::class . '@accommodations')->name('hotel/accommodations');
+
+
+//Cantidad de hoteles
+Route::get('hotel/count', HotelsController::class . '@count')->name('hotel/count');

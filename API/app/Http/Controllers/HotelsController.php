@@ -13,7 +13,9 @@ class HotelsController extends Controller
 
     public function all(){
         try {
-            $hotels = Hotels::with('status')->get();
+            $hotels = Hotels::with('status')
+            ->OrderBy('id', 'desc')
+            ->get();
             return response()->json($hotels, 201);
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Error al obtener los hoteles', 'error' => $th->getMessage()], 400);
@@ -83,6 +85,15 @@ class HotelsController extends Controller
         } catch (\Throwable $th) {
             DB::rollBack();
             return response()->json(['message' => 'Error al registrar el hotel', 'error' => $th->getMessage()], 400);
+        }
+    }
+
+    public function count(){
+        try {
+            $count = Hotels::count();
+            return response()->json($count, 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error al obtener la cantidad de hoteles', 'error' => $th->getMessage()], 400);
         }
     }
 }

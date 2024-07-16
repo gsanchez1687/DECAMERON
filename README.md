@@ -11,8 +11,15 @@
 
 ### Requisitos importantes
 ```
-php v8.2
+php 8.2
+Si estas en Mac
+https://www.mamp.info/en/mamp/mac/
+
+Si estas en windows
+https://laragon.org/
+
 node v20
+https://nodejs.org/en/download/package-manager
 ```
 
 ### Instalacion de la Api
@@ -63,4 +70,13 @@ npm install
 ```
 Ejecutamos este codigo para correr el frontend
 npm run dev
+```
+
+### Otra alternativa (Aun trabajando en eso)
+
+```
+Con Docker no hace falta hacer nada, solo tener docker instalado
+https://www.docker.com/
+
+docker-compose up
 ```

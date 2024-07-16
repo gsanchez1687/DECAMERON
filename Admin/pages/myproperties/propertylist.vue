@@ -29,11 +29,14 @@ import { ref, onMounted } from "vue";
 const Hotels = ref([]);
 
 // Get all hotels
-onMounted(() => {
-    services.getHotels().then((res: any) => {
+onMounted(async () => {
+    try {
+        const res = await services.getHotels();
         Hotels.value = res.data;
-    })
-})
+    } catch (err) {
+        console.log(err);
+    }
+});
 </script>
 
 <style scoped>

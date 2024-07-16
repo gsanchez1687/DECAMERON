@@ -11,7 +11,7 @@
                                     <div class="media">
                                         <img src="/image/svg/icon/1.svg" class="img-fluid" alt="">
                                         <div class="media-body">
-                                            <h4 class="mb-0">45</h4>
+                                            <h4 class="mb-0">{{ count }}</h4>
                                             <h6 class="light-font">Hoteles</h6>
                                         </div>
                                         <nuxt-link to="/myproperties/propertylist" class="arrow-animated">
@@ -30,14 +30,27 @@
 </template>
 
 <script setup lang="ts">
-import { baseUrl } from "@/composable/apiurl";
-interface property{
-    src:string;
-    totle:string;
-    type:string
-}
-const {data} = await useFetch(baseUrl+'/data/dashboard.json');
-const propertydata:property[] = data.value.properties
+import { on } from "events";
+import { ref, onMounted } from "vue";
+
+// Variable reactiva que almacena el número de hoteles
+const count = ref(0);
+
+
+// Este código se ejecuta cuando el componente se monta en el DOM
+onMounted(async () => {
+    try {
+        // Importa el módulo de servicios desde "@/services/services"
+        const services = await import("@/services/services");
+        // Realiza una petición para obtener el número de hoteles
+        const res = await services.default.getHotelCount();
+        // Asigna el resultado de la petición al valor de la variable "count"
+        count.value = res.data;
+    } catch (err) {
+        // Si ocurre un error, se muestra en la consola
+        console.log(err);
+    }
+});
 </script>
 
 <style scoped>

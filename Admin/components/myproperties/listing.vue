@@ -10,29 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import { Swiper, SwiperSlide  } from "swiper/vue"
-import { Navigation, Pagination } from 'swiper/modules';
-
 let props = defineProps({
     dataHotel:Object
 });
 
-
-let parpagedata = ref<number>(6)
-let currentpage = ref<number>(1)
-let totalpage:number = Math.ceil(props.dataHotel.length / parpagedata.value);
-
 function getdataHotel(){
-    let start = (currentpage.value - 1) * parpagedata.value;
-    let end = start + parpagedata.value
-    return props.dataHotel.slice(start , end)
+    return props.dataHotel
 }
-
-
-function pageview(page:number){
-currentpage.value = page
-}
-let modules = [Navigation , Pagination]
 </script>
 
 <style scoped>

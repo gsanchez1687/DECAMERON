@@ -8,8 +8,7 @@ const api = Axios.create({
       'X-Requested-With': 'XMLHttpRequest',
     },
   });
-
-
+  
   export default {
 
     //Guarda un nuevo hotel
@@ -26,6 +25,10 @@ const api = Axios.create({
         return api.get(`/api/hotel/all`);
       },
 
+      getHotelCount(){
+        return api.get(`/api/hotel/count`);
+      },
+
       //Obtener rooms
       getRooms(){
         return api.get(`/api/hotel/rooms`);
@@ -35,6 +38,4 @@ const api = Axios.create({
       getAccommodations(){
         return api.get(`/api/hotel/accommodations`);
       },
-      
-
   }

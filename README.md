@@ -61,6 +61,6 @@ npm install
 
 #### PASO 2
 ```
-ejecutamos este codigo para correr el frontend
+Ejecutamos este codigo para correr el frontend
 npm run dev
 ```

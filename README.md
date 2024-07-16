@@ -47,7 +47,7 @@ sudo nano /etc/hosts
 
 ```
 Ahora vamos a correr el proyecto API
-php artisan serve --host='decameron.local' --port=8000
+php artisan serve --host=decameron.local --port=8000
 ```
 
 ### Instalacion del Frontend
